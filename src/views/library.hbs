@@ -1,15 +1,24 @@
-<head>
-
-  <title>PulpFACtion - Library</title>
-</head>
+<title>PulpFACtion - Library</title>
 
 <body>
+    {{> navbar }}
     {{> header}}
 
-    <!-- List of books -->
+{{#each books}}
+  <ul>
+    <li>{{ title }}</li>
+  </ul>
+{{/each}}
 
     <!-- My bookshelf -->
-        <!-- Add a book -->
+        <form class="addBook" action="/library" method="post">
+          <input type="text" name="Title" value="">
+          <input type="text" name="Author" value="">
+          <input type="text" name="ISBN" value="">
+          <select class="" name="">
+            <option value="" name="Genre"></option>
+          </select>
+        </form>
 
     {{> footer}}
 
