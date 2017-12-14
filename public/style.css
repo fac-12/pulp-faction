@@ -1,7 +1,3 @@
-.username-error {
-  display: none;
-}
-
-.password-error {
+.username-error, .password-error, .suError {
   display: none;
 }

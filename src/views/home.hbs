@@ -11,18 +11,18 @@
     <section class="signUp__form">
     <form id="signUp" class="signUp" action="/library" method="post">
     <label class="signUp__labels" for="name"> Name:
-      <input id="name" type="text" name="name" required>
+      <input id="suName" type="text" name="name" required>
       </label>
       <label class="signUp__labels" for="gitterhandle"> GitterHandle:
-         <input type="text" name="gitterhandle" required>
+         <input id="suGitterHandle" type="text" name="gitterhandle" required>
       </label>
       <label class="signUp__labels" for="password">
-        Password:  <input type="password" name="password">
+        Password:  <input id="suPw" type="password" name="password">
       </label>
       <label class="signUp__labels" for="password">
        Confirm Password:  <input type="password" name="confirmPassword">
       </label>
-
+      <div id="suError" class="suError"></div>  
       <input id="submit-btn" value="sign up" class="signUp__submit-btn" type="submit">
     </form>
     </section>
