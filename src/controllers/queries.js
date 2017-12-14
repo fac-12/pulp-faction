@@ -6,12 +6,18 @@ const checkUser = gitterhandle =>
 const getPassword = gitterhandle =>
   db.query('SELECT password FROM users WHERE gitterhandle = $1', [gitterhandle]);
 
+
+const getBooks = () =>
+  db.query('SELECT * FROM books');
+
 const createUser = (name, gitterhandle, hashedPw) => {
   return db.query('INSERT INTO users(name, gitterhandle, password) VALUES ($1, $2, $3) RETURNING id, gitterhandle, name', [name, gitterhandle, hashedPw]);
 };
+
 
 module.exports = {
   checkUser,
   createUser,
   getPassword,
+  getBooks,
 };
