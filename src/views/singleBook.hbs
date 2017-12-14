@@ -5,9 +5,27 @@
 
 <body>
     {{> header}}
-    
+
     <!-- Book details -->
+    <h1> book details </h1>
+      <table>
+        <tr>
+          <td> title </td>
+          <td> author </td>
+          <td> ISBN </td>
+          <td> Genre </td>
+        </tr>
+        <tr>
+          {{#each books}}
+          <td> {{books.title}}</td>
+          <td> {{books.author}}</td>
+          <td> {{books.ISBN}}</td>
+          <td> {{books.genre}}</td>
+          {{/each}}
+        </tr>
+      </table>
       <!-- Reserve button -->
+      <button class="reserve-btn">reserve</button>
 
     {{> footer}}
 
