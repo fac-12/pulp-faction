@@ -1,15 +1,51 @@
-<head>
-
-  <title>PulpFACtion - Library</title>
-</head>
-
+{{> htmlHead }}
 <body>
-    {{> header}}
+    {{> navbar }}
 
-    <!-- List of books -->
+{{#each books}}
+  <ul>
+    <li>{{ title }}</li>
+  </ul>
+{{/each}}
 
     <!-- My bookshelf -->
-        <!-- Add a book -->
+    <section class="addBook__form">
+        <form class="addBook" action="/library" method="post">
+        <label class="addbook_label" for="Title"> Title:
+            <input id="Title" type="text" name="Title" value="">
+        </label>
+        <label class="addbook_label" for="Author">
+          author:  <input id="Author" type="text" name="Author" value="">
+        </label>
+        <label class="addbook_label" for="ISBN">
+          ISBN: <input id="ISBN" type="text" name="ISBN" value="">
+        </label>
+          <select class="" name="">
+         <optgroup label="fiction">
+          <option value="Classics" name="Genre">Classics</option>
+          <option value="Romance" name="Genre">Romance</option>
+          <option value="Thrillers" name="Genre">Thrillers</option>
+          <option value="True Crime" name="Genre">True Crime</option>
+          <option value="Science Fiction" name="Genre">Science Fiction</option>
+          <option value="Fantasy" name="Genre">Fantasy</option>
+          <option value="Horror" name="Genre">Horror</option>
+          <option value="Graphic Novels & Manga" name="Genre">Graphic Novels & Manga</option>
+          </optgroup>
+        <optgroup label=""Non-fiction">
+          <option value="Biography & True Stories" name="Genre">Biography & True Stories</option>
+          <option value="Food & Drink" name="Genre">Food & Drink</option>
+          <option value="Health & Lifestyle" name="Genre">Health & Lifestyle</option>
+          <option value="History" name="Genre">History</option>
+          <option value="Humour" name="Genre">Humour</option>
+          <option value="Philosophy & Politics" name="Genre">Philosophy & Politics</option>
+          <option value="Hobbies" name="Genre">Hobbies</option>
+          <option value="Science" name="Genre">Science</option>
+          <option value="Technology" name="Genre">Technology</option>
+          <option value="Video Games" name="Genre">Video Games</option>
+          </optgroup>
+          </select>
+         </form>
+    </section>
 
     {{> footer}}
 

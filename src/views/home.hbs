@@ -5,9 +5,39 @@
 
 <body>
 
-    {{> header}}    
+    {{> header}}
 
     <!-- Form stuff -->
+    <section class="signUp__form">
+    <form class="signUp" action="/library" method="post">
+    <label class="signUp__labels" for="name"> Name:
+      <input id="name" type="text" name="name" required>
+      </label>
+      <label class="signUp__labels" for="gitterhandle"> GitterHandle:
+         <input type="text" name="gitterhandle" required>
+      </label>
+      <label class="signUp__labels" for="password">
+        Password:  <input type="password" name="password">
+      </label>
+      <label class="signUp__labels" for="password">
+       Confirm Password:  <input type="password" name="confirmPassword">
+      </label>
+
+      <input id="submit-btn" value="sign up" class="signUp__submit-btn" type="submit">
+    </form>
+    </section>
+
+    <section class="logIn__form">
+     <form class="logIn" action="/library" method="post">
+     <label class="logIn__gitterhandle"> GitterHandle:
+      <input type="text" name="gitterhandle" required>
+      </label>
+      <label class="logIn__password"> Password:
+        <input type="password" name="password">
+      </label>
+     <input id="submit-btn" value="log in" class="logIn__submit-btn" type="submit">
+    </form>
+    </section>
 
     {{> footer}}
 
