@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const {
   parse
 } = require('cookie');
+const queries = require('./queries');
 
 exports.get = (req, res) => {
   if (req.headers.cookie) {
@@ -10,7 +11,16 @@ exports.get = (req, res) => {
       if (err) {
         res.status(401).send("Don't fuck with our cookies");
       } else {
-        res.render('library');
+        queries.getBooks()
+        .then((books)=>{
+          console.log(books);
+          res.render('library', { books });
+
+        })
+        .catch((err)=> {
+          console.log(err);
+        })
+
       }
     });
   } else {

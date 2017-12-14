@@ -6,8 +6,13 @@ const checkUser = gitterhandle =>
 const getPassword = gitterhandle =>
   db.query('SELECT password FROM users WHERE gitterhandle = $1', [gitterhandle]);
 
+const getBooks = () =>
+  db.query('SELECT * FROM books');
+
+
 
 module.exports = {
   checkUser,
   getPassword,
+  getBooks,
 };

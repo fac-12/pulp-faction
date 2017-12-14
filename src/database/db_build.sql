@@ -32,4 +32,6 @@ INSERT INTO users (name, gitterhandle, password) VALUES ('Sophie', '@sophieleven
 
 INSERT INTO books (title, author, isbn, genre, ownerID, reserved) VALUES ('The Great Gatsby', 'F. Scott Fitzgerald', '9781597226769', 'Novel', (SELECT id FROM users WHERE gitterhandle = '@sophielevens'), false);
 
+INSERT INTO books (title, author, isbn, genre, ownerID, reserved) VALUES ('I am Pilgrim', 'Terry Hayes', '0552160962', 'Novel', (SELECT id FROM users WHERE gitterhandle = '@sophielevens'), false);
+
 COMMIT;
