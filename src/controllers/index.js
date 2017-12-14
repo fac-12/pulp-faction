@@ -6,13 +6,15 @@ const singleBook = require('./singleBook');
 const signUp = require('./signUp');
 const login = require('./login');
 const library = require('./library');
+const reserveBook = require('./reserveBook');
 
 router.get('/', home.get);
 
 router.post('/login', login.post);
 router.post('/signup', signUp.post);
 router.get('/library', library.get);
-router.get('/library/:singleBook', singleBook.get);
+router.get('/library/:bookid', singleBook.get);
+router.get('/reservebook/:bookid', reserveBook.get);
 
 router.use(error.client);
 
