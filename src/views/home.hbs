@@ -9,7 +9,7 @@
 
     <!-- Form stuff -->
     <section class="signUp__form">
-    <form class="signUp" action="/library" method="post">
+    <form id="signUp" class="signUp" action="/library" method="post">
     <label class="signUp__labels" for="name"> Name:
       <input id="name" type="text" name="name" required>
       </label>
@@ -28,12 +28,16 @@
     </section>
 
     <section class="logIn__form">
-     <form class="logIn" action="/library" method="post">
+     <form id="logIn" class="logIn" action="/library" method="post">
      <label class="logIn__gitterhandle"> GitterHandle:
-      <input type="text" name="gitterhandle" required>
+      <input id="lgGitter" type="text" name="gitterhandle" required>
+      <div id="username-error" class="username-error">
+      </div>
       </label>
       <label class="logIn__password"> Password:
-        <input type="password" name="password">
+        <input id="lgPassword" type="password" name="password">
+        <div id="password-error" class="password-error">
+        </div>
       </label>
      <input id="submit-btn" value="log in" class="logIn__submit-btn" type="submit">
     </form>
