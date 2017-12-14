@@ -1,10 +1,15 @@
 /* eslint-disable */
 
 var loginForm = document.getElementById('logIn');
+var signupForm = document.getElementById('signUp');
+var signupName = document.getElementById('suName');
+var signupGitterHandle = document.getElementById('suGitterHandle');
+var signupPw = document.getElementById('suPw');
 var lgGitter = document.getElementById('lgGitter');
 var lgPassword = document.getElementById('lgPassword');
 var passwordError = document.getElementById('password-error');
 var usernameError = document.getElementById('username-error');
+var suError = document.getElementById('suError');
 
 loginForm.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -22,6 +27,25 @@ loginForm.addEventListener('submit', function(event) {
     else if(response === 'Username doesn\'t exist') {
       usernameError.textContent = response;
       usernameError.style.display = 'block';
+    }
+
+  })
+
+});
+
+signupForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var body = {
+    name: suName.value,
+    gitterhandle: suGitterHandle.value,
+    password: suPw.value,
+  };
+
+  xhrTemplate('/signup', 'POST', body, 201, function(response) {
+    if(response === 'This user is already registered, please login') {
+      suError.textContent = response;
+      suError.style.display = 'block';
     }
 
   })
