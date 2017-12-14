@@ -5,6 +5,7 @@ const {
 const queries = require('./queries');
 
 exports.get = (req, res) => {
+
   if (req.headers.cookie) {
     const userJwt = parse(req.headers.cookie);
     jwt.verify(userJwt.token, process.env.SECRET, (err, decoded) => {
