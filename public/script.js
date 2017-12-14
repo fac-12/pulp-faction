@@ -11,6 +11,9 @@ var passwordError = document.getElementById('password-error');
 var usernameError = document.getElementById('username-error');
 var suError = document.getElementById('suError');
 
+
+
+
 loginForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -51,6 +54,8 @@ signupForm.addEventListener('submit', function(event) {
   })
 
 });
+
+
 
 var xhrTemplate = function(url, method, body, responseStatus, callback) {
   var xhr = new XMLHttpRequest();

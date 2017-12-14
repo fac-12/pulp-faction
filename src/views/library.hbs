@@ -10,7 +10,7 @@
 
     <!-- My bookshelf -->
     <section class="addBook__form">
-        <form class="addBook" action="/library" method="post">
+        <form class="addBook" action="/addbook" method="post">
         <label class="addbook_label" for="Title"> Title:
             <input id="Title" type="text" name="Title" value="">
         </label>
@@ -20,7 +20,7 @@
         <label class="addbook_label" for="ISBN">
           ISBN: <input id="ISBN" type="text" name="ISBN" value="">
         </label>
-          <select class="" name="">
+          <select class="" name="" id="genre">
          <optgroup label="fiction">
           <option value="Classics" name="Genre">Classics</option>
           <option value="Romance" name="Genre">Romance</option>
@@ -44,10 +44,14 @@
           <option value="Video Games" name="Genre">Video Games</option>
           </optgroup>
           </select>
+          <button type="submit" name="button" class="submitbtn" id="submitbtn"></button>
          </form>
     </section>
 
     {{> footer}}
 
-    {{> script}}
+    <script type="text/javascript" src="/addbook.js">
+
+    </script>
+
 </body>

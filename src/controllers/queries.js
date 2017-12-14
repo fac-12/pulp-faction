@@ -14,6 +14,9 @@ const createUser = (name, gitterhandle, hashedPw) => {
   return db.query('INSERT INTO users(name, gitterhandle, password) VALUES ($1, $2, $3) RETURNING id, gitterhandle, name', [name, gitterhandle, hashedPw]);
 };
 
+const addBook = (title, author, isbn, genre) => {
+  return db.query('INSERT INTO books(title, author, isbn, genre) VALUES ($1, $2, $3, $4)', [title, author, isbn, genre]);
+};
 
 module.exports = {
   checkUser,

@@ -5,14 +5,16 @@ const home = require('./home');
 const signUp = require('./signUp');
 const login = require('./login');
 const library = require('./library');
-const id = require('./id');
+const addbook = require('./addbook');
+// const id = require('./id');
 
 router.get('/', home.get);
 
 router.post('/login', login.post);
 router.post('/signup', signUp.post);
+router.post('/addbook', addbook.post);
 router.get('/library', library.get);
-router.get('/library/:id', id.get);
+// router.get('/library/:id', id.get);
 
 router.use(error.client);
 
