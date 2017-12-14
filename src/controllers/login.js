@@ -22,7 +22,7 @@ exports.post = (req, res) => {
       if (match) {
         console.log('Sending back password');
         const token = jwt.sign({ username: req.body.username, logged_in: true }, secret);
-        res.status(201).set({ Location: '/library', 'Set-Cookie': `token=${token}; HttpOnly; Max-Age=9000` });
+        res.status(201).set({Location: '/library', 'Set-Cookie': `token=${token}; HttpOnly; Max-Age=9000` });
         res.send();
       } else {
         res.status(401).send('Your password is incorrect');
