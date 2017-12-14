@@ -13,9 +13,15 @@
     <!-- My bookshelf -->
     <section class="addBook__form">
         <form class="addBook" action="/library" method="post">
-          <input type="text" name="Title" value="">
-          <input type="text" name="Author" value="">
-          <input type="text" name="ISBN" value="">
+        <label class="addbook_label" for="Title"> Title:
+            <input id="Title" type="text" name="Title" value="">
+        </label>
+        <label class="addbook_label" for="Author">
+          author:  <input id="Author" type="text" name="Author" value="">
+        </label>
+        <label class="addbook_label" for="ISBN">
+          ISBN: <input id="ISBN" type="text" name="ISBN" value="">
+        </label>
           <select class="" name="">
           <option value="" name="Genre">{{genre}}</option>
           </select>
