@@ -19,18 +19,11 @@ const getSingleBook = id =>
 
 const createUser = (name, gitterhandle, hashedPw) => db.query('INSERT INTO users(name, gitterhandle, password) VALUES ($1, $2, $3) RETURNING id, gitterhandle, name', [name, gitterhandle, hashedPw]);
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 45d2d247d8bfa997a5ce4e5f14cfbdc145337511
 const addBook = (title, author, isbn, genre) =>
   db.query('INSERT INTO books(title, author, isbn, genre) VALUES ($1, $2, $3, $4)', [title, author, isbn, genre]);
 
 const reserveBook = bookId => db.query('UPDATE books SET reserved = NOT reserved WHERE id = $1', [bookId]);
-<<<<<<< HEAD
-=======
-
->>>>>>> 45d2d247d8bfa997a5ce4e5f14cfbdc145337511
 
 module.exports = {
   checkUser,
