@@ -46,7 +46,7 @@ signupForm.addEventListener('submit', function(event) {
   var body = {
     name: suName.value,
     gitterhandle: suGitterHandle.value,
-    password: suPw.value
+    password: suPw.value,
   };
 
   xhrTemplate('/signup', 'POST', body, 201, function(response) {
