@@ -8,6 +8,7 @@ const library = require('./library');
 const addbook = require('./addbook');
 // const id = require('./id');
 const reserveBook = require('./reserveBook');
+const singleBook = require('./singleBook');
 
 router.get('/', home.get);
 
