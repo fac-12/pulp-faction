@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, books;
+DROP TABLE IF EXISTS users, books, borrowed;
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
