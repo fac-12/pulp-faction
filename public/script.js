@@ -32,6 +32,9 @@ loginForm.addEventListener('submit', function(event) {
       usernameError.textContent = response;
       usernameError.style.display = 'block';
     }
+    else {
+      alert('500, Internal server error');
+    }
 
   })
 
@@ -50,6 +53,9 @@ signupForm.addEventListener('submit', function(event) {
     if(response === 'This user is already registered, please login') {
       suError.textContent = response;
       suError.style.display = 'block';
+    }
+    else {
+      alert('500, Internal server error');
     }
 
   })

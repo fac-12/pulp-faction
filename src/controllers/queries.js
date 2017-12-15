@@ -9,7 +9,7 @@ const checkUser = gitterhandle =>
            `, [gitterhandle]);
 
 const getPassword = gitterhandle =>
-  db.query('SELECT password FROM users WHERE gitterhandle = $1', [gitterhandle]);
+  db.query('SELE password FROM users WHERE gitterhandle = $1', [gitterhandle]);
 
 const getBooks = () =>
   db.query('SELECT * FROM books');
