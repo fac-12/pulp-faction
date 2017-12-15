@@ -1,10 +1,15 @@
 const db = require('../database/db_connections');
 
 const checkUser = gitterhandle =>
-  db.query('SELECT CASE WHEN EXISTS(SELECT gitterhandle FROM users WHERE gitterhandle = $1) THEN CAST (true AS BOOLEAN) ELSE CAST (false AS BOOLEAN) END', [gitterhandle]);
+  db.query(`
+           SELECT
+             CASE WHEN EXISTS(SELECT gitterhandle FROM users WHERE gitterhandle = $1)
+             THEN CAST (true AS BOOLEAN) ELSE CAST (false AS BOOLEAN)
+           END
+           `, [gitterhandle]);
 
 const getPassword = gitterhandle =>
-  db.query('SELECT password FROM users WHERE gitterhandle = $1', [gitterhandle]);
+  db.query('SELE password FROM users WHERE gitterhandle = $1', [gitterhandle]);
 
 const getBooks = () =>
   db.query('SELECT * FROM books');
@@ -14,6 +19,10 @@ const getSingleBook = id =>
 
 const createUser = (name, gitterhandle, hashedPw) => db.query('INSERT INTO users(name, gitterhandle, password) VALUES ($1, $2, $3) RETURNING id, gitterhandle, name', [name, gitterhandle, hashedPw]);
 
+
+const addBook = (title, author, isbn, genre) =>
+  db.query('INSERT INTO books(title, author, isbn, genre) VALUES ($1, $2, $3, $4)', [title, author, isbn, genre]);
+
 const reserveBook = bookId => db.query('UPDATE books SET reserved = NOT reserved WHERE id = $1', [bookId]);
 
 module.exports = {
@@ -21,6 +30,7 @@ module.exports = {
   createUser,
   getPassword,
   getBooks,
+  addBook,
   getSingleBook,
   reserveBook,
 };

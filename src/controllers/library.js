@@ -14,7 +14,6 @@ exports.get = (req, res, next) => {
       } else {
         queries.getBooks()
         .then((books)=>{
-          console.log(books);
           res.render('library', { books });
 
         })

@@ -5,11 +5,15 @@ var signupForm = document.getElementById('signUp');
 var signupName = document.getElementById('suName');
 var signupGitterHandle = document.getElementById('suGitterHandle');
 var signupPw = document.getElementById('suPw');
+var confirmSignupPw = document.getElementById('cPw');
 var lgGitter = document.getElementById('lgGitter');
 var lgPassword = document.getElementById('lgPassword');
 var passwordError = document.getElementById('password-error');
 var usernameError = document.getElementById('username-error');
 var suError = document.getElementById('suError');
+
+
+
 
 loginForm.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -27,6 +31,9 @@ loginForm.addEventListener('submit', function(event) {
     else if(response === 'Username doesn\'t exist') {
       usernameError.textContent = response;
       usernameError.style.display = 'block';
+    }
+    else {
+      alert('500, Internal server error');
     }
 
   })
@@ -47,10 +54,15 @@ signupForm.addEventListener('submit', function(event) {
       suError.textContent = response;
       suError.style.display = 'block';
     }
+    else {
+      alert('500, Internal server error');
+    }
 
   })
 
 });
+
+
 
 var xhrTemplate = function(url, method, body, responseStatus, callback) {
   var xhr = new XMLHttpRequest();
