@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const secret = process.env.SECRET;
 
 
-exports.post = (req, res) => {
+exports.post = (req, res, next) => {
   console.log('Login route');
   queries.getPassword(req.body.username)
     .then(resData =>
@@ -29,12 +29,21 @@ exports.post = (req, res) => {
       }
     })
     .catch((err) => {
+      console.log(err);
       switch (err.message) {
         case 'Username doesn\'t exist':
           res.status(401).send('Username doesn\'t exist');
           break;
         default:
-          console.log(err);
+          next(err);
+        // console.log("hello this is an error");
+        //   res.status(500).render('error', {
+        //     layout: 'error',
+        //     statusCode : 500,
+        //     errorMessage: 'Internal server error',
+        //   })
+
+
       }
     });
 };

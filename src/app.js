@@ -19,12 +19,13 @@ app.engine(
     partialsDir: path.join(__dirname, 'views', 'partials'),
     defaultLayout: 'main',
     helpers,
-  })
+  }),
 );
 
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(controllers);
+
 
 module.exports = app;
