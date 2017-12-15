@@ -34,7 +34,9 @@ exports.post = (req, res) => {
       res.send();
     })
 
+
   .catch((err) => {
+    console.log(err);
     switch (err.message) {
       case 'This user already exists, please login':
         res.status(409).send('This user is already registered, please login');

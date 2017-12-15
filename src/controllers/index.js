@@ -16,8 +16,8 @@ router.get('/library', library.get);
 router.get('/library/:bookid', singleBook.get);
 router.get('/reservebook/:bookid', reserveBook.get);
 
-router.use(error.client);
 
+router.use(error.client);
 router.use(error.server);
 
 module.exports = router;
