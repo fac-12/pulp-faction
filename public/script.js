@@ -5,6 +5,7 @@ var signupForm = document.getElementById('signUp');
 var signupName = document.getElementById('suName');
 var signupGitterHandle = document.getElementById('suGitterHandle');
 var signupPw = document.getElementById('suPw');
+var confirmSignupPw = document.getElementById('cPw');
 var lgGitter = document.getElementById('lgGitter');
 var lgPassword = document.getElementById('lgPassword');
 var passwordError = document.getElementById('password-error');
@@ -42,7 +43,7 @@ signupForm.addEventListener('submit', function(event) {
   var body = {
     name: suName.value,
     gitterhandle: suGitterHandle.value,
-    password: suPw.value,
+    password: suPw.value
   };
 
   xhrTemplate('/signup', 'POST', body, 201, function(response) {
