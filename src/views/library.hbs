@@ -4,21 +4,21 @@
 
 {{#each books}}
   <ul>
-   <a href="/library/{{id}}"><li>{{ title }} - {{ author }}</li></a>
+   <a href="/library/{{id}}"><li>{{ title }}</a> - {{ author }}</li>
   </ul>
 {{/each}}
 
     <!-- My bookshelf -->
     <section class="addBook__form">
-        <form class="addBook" action="/addbook" method="post">
+        <form id="addbook-form" class="addBook" action="" method="">
         <label class="addbook_label" for="Title"> Title:
-            <input id="Title" type="text" name="Title" value="">
+            <input id="Title" type="text" name="Title" required>
         </label>
         <label class="addbook_label" for="Author">
-          author:  <input id="Author" type="text" name="Author" value="">
+          author:  <input id="Author" type="text" name="Author" required>
         </label>
         <label class="addbook_label" for="ISBN">
-          ISBN: <input id="ISBN" type="text" name="ISBN" value="">
+          ISBN: <input id="ISBN" type="text" name="ISBN" required>
         </label>
           <select class="" name="" id="genre">
          <optgroup label="fiction">
@@ -44,7 +44,7 @@
           <option value="Video Games" name="Genre">Video Games</option>
           </optgroup>
           </select>
-          <button type="submit" name="button" class="submitbtn" id="submitbtn"></button>
+          <button type="submit" name="submit" class="submitbtn" id="addbook-btn">add book</button>
          </form>
     </section>
 

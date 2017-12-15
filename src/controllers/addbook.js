@@ -1,11 +1,11 @@
 const queries = require('./queries');
 
 exports.post = (req, res) => {
- console.log(req.body);
   const addBookForm = req.body;
-  queries.addbook(addBookForm.title, addBookForm.author, addBookForm.isbn, addBookForm.genre)
+  queries
+  .addBook(addBookForm.Title, addBookForm.Author, addBookForm.Isbn, addBookForm.Genre)
   .then((resdata) => {
-    console.log(resdata);
+    res.status(201).set({Location: '/library' }).send();
   })
   .catch((err) => {
     console.log(err);

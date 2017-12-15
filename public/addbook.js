@@ -1,22 +1,22 @@
 /* eslint-disable */
 
-var addBook = document.getElementById('submitbtn');
+var addBookForm = document.getElementById('addbook-form');
 var title = document.getElementById('Title');
 var author = document.getElementById('Author');
 var isbn = document.getElementById('ISBN');
 var genre = document.getElementById('genre');
 
-addBook.addEventListener('submit', function(event){
-    event.preventDefault(
+addBookForm.addEventListener('submit', function(event){
+  event.preventDefault();
     var body = {
-      Title: title.value,
-      Author: author.value,
-      Isbn: isbn.value,
-      Genre: genre.value
+      'Title': title.value,
+      'Author': author.value,
+      'Isbn': isbn.value,
+      'Genre': genre.value
     }
-    console.log(body);
-  xhrTemplate('/addbook', 'POST', body, 201, cb);
-
+  xhrTemplate('/addbook', 'POST', body, 201, function(response){
+      console.log('callback run')
+  });
 });
 
 var xhrTemplate = function(url, method, body, responseStatus, callback) {
