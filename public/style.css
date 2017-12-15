@@ -1,3 +1,23 @@
 .username-error, .password-error, .suError {
   display: none;
 }
+header {
+
+}
+.container {
+  min-height: calc(100vh - 140px);
+
+}
+input {
+  display: block;
+}
+
+.signUp__form {
+ margin-bottom: 3%;
+}
+
+
+
+footer {
+  height: 50px;
+}
