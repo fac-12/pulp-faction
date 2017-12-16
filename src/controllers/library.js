@@ -4,7 +4,7 @@ const {
 } = require('cookie');
 const queries = require('./queries');
 
-exports.get = (req, res) => {
+exports.get = (req, res, next) => {
 
   if (req.headers.cookie) {
     const userJwt = parse(req.headers.cookie);
