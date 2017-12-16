@@ -1,23 +1,90 @@
 .username-error, .password-error, .suError {
   display: none;
 }
+
 body {
   margin: 0;
   background: black;
   color: white;
-
+  font-size: 1.2em;
 }
+
+/*library navbar*/
+
+nav {
+  height: 80px;
+  background-color: rgb(212, 3, 9);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: right;
+}
+
+li a:hover {
+  color: rgb(244, 215, 26);
+}
+
+ul {
+  padding-left: 0;
+}
+
+
+li {
+  list-style: none;
+}
+
+/* unvisited link */
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+
+a:hover {
+  color: rgb(244, 215, 26);
+}
+
+/* selected link */
+
+a:active {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 2%;
+}
+
+/*login header*/
+
 header {
- background-color:rgb(212, 3, 9);
- height: 90px;
+  background-color: rgb(212, 3, 9);
+  height: 90px;
 }
 
 h1 {
-  margin:0;
+  margin: 0;
   padding: 0.5%;
   text-align: center;
   font-size: 3.5rem;
-  font-family:'Alegreya', serif;
+  font-family: 'Alegreya', serif;
   color: rgb(244, 215, 26);
   letter-spacing: 1.5px;
 }
@@ -25,36 +92,45 @@ h1 {
 h2 {
   font-family: sans-serif;
 }
+
+
+input {
+  display: block;
+  width: 250px;
+  padding: 3%;
+  margin: 2%;
+}
+
 .container {
   min-height: calc(100vh - 190px);
   width: 50%;
   margin: auto;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-
-}
-input {
-  display: block;
-  width: 250px;
-  /* padding: 3%; */
-  /* margin: 2%; */
+  /* align-items: center; */
 }
 
-li{
-  list-style: none;
+.container__library {
+  min-height: calc(100vh - 210px);
+  width: 90%;
+  margin: 2% auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container__addbook {
+  justify-content: space-around;
 }
 
 .signUp__form {
- margin-top: 2%;
- margin-bottom: 3%;
-}
-
-.logIn__form{
-  margin-top: 2%;
+  margin-top: 10%;
   margin-bottom: 3%;
 }
 
+.logIn__form {
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
 
 footer {
   height: 50px;
